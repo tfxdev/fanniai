@@ -1,0 +1,132 @@
+{% load static %}
+{% include 'theme/inc/header.html' %}
+
+    <!-- interview section -->
+    <section class="px-2 service_page py-5">
+        <div class="container">
+            <div class="row">
+                <div action="#!" class="col-lg-3 col-md-4 col-12">
+                    <div>
+                        <h5 class="service_left_heading inter_font my-3">Choose Your Services</h5>
+                        <p class="serivice_left_title inter_font my-3">This services help your productivity</p>
+    
+                        <!-- slect option -->
+                        <div class="my-4 interview_question_select">
+                            <select class="inter_font" aria-label="Default select example">
+                                <option class="inter_font">Select</option>
+                                <option class="inter_font" value="1">Interview Question</option>
+                                <option class="inter_font" selected value="2">Boolean Search</option>
+                                <option class="inter_font" value="3">Candidate Summaries</option>
+                                <option class="inter_font" value="3">Jobs Description</option>
+                                <option class="inter_font" value="3">Email Template</option>
+                                <option class="inter_font" value="3">Keyword Search</option>
+                                <option class="inter_font" value="3">Jobs Description Breakdown</option>
+                                <option class="inter_font" value="3">Technical Question</option>
+                            </select>
+                        </div>
+
+                        
+
+
+
+                        
+                        <h5 class="service_job_title inter_font my-3">Strings</h5>
+                        <input class="job_title_input form-control inter_font my-3" placeholder="Cosmetic" type="text">
+    
+                        <div class="service_button_container d-block d-md-flex d-lg-flex mx-2 mt-5">
+                            <a href="#!" class="service_btn d-inline d-md-block d-lg-block inter_font">Clear</a>
+                            <a href="#!" class=" service_btn_active d-inline d-md-block d-lg-block ms-auto inter_font">Create</a>
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+    
+                <div class="col-lg-9 col-md-8 col-12 ps-2 ps-md-4 ps-lg-4 py-5 py-md-0 py-lg-0">
+                    <form class="service_main_container">
+
+
+                        <!-- dropdown icon -->
+                        <div class="d-flex service_input_desc_header_container px-4 py-3">
+                            <h5 class="service_input_desc_header inter_font">
+                                <a href="#!" class=""><img src="{% static 'img/arrow-small-right 1.png' %}" class="service_input_desc_header_icon" alt="arrow icon"></a>
+                                &nbsp; Cosmetic Chemist
+                            </h5>
+
+                            
+                            <div class="ms-auto menu_icon_container">
+
+                                <div class="dropdown">
+                                    <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{% static 'img/menu-dots-vertical.png' %}" class="service_input_desc_header_menu_icon">
+                                    </button>
+                                    <ul class="dropdown-menu drop_down_conatiner" aria-labelledby="dropdownMenuButton1">
+
+                                        <div class="service_drop_down_item inter_font py-2 d-flex dropdown-item">
+                                            <div class="pe-1">
+                                                <img src="{% static 'img/download_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                            </div>
+                                            <div class="ms-1">Download (.docx)</div>
+                                        </div>
+
+                                        <div class="service_drop_down_item inter_font py-2 d-flex dropdown-item">
+                                            <div class="pe-1">
+                                                <img src="{% static 'img/clear_all_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                            </div>
+                                            <div class="ms-1">Clear all content</div>
+                                        </div>
+
+                                        <div class="service_drop_down_item inter_font py-2 d-flex dropdown-item">
+                                            <div class="pe-1">
+                                                <img src="{% static 'img/trash_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                            </div>
+                                            
+                                            <div class="ms-1 pt-1">Delete document</div>
+                                        </div>
+                                    </ul>
+                                  </div>
+                                <!-- <div class="drop_down_conatiner text-center">
+
+                                    <div class="service_drop_down_item inter_font py-2 d-flex">
+                                        <div class="pe-1">
+                                            <img src="{% static 'img/download_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                        </div>
+                                        <div class="ms-1">Download (.docx)</div>
+                                    </div>
+
+                                    <div class="service_drop_down_item inter_font py-2 d-flex">
+                                        <div class="pe-1">
+                                            <img src="{% static 'img/clear_all_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                        </div>
+                                        <div class="ms-1">Clear all content</div>
+                                    </div>
+
+                                    <div class="service_drop_down_item inter_font py-2 d-flex">
+                                        <div class="pe-1">
+                                            <img src="{% static 'img/trash_icon.png' %}" class="dropdown_item_icon" alt="donload icon">
+                                        </div>
+                                        
+                                        <div class="ms-1 pt-1">Delete document</div>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+
+
+                        <!-- <textarea id="editor" class="oke"></textarea>  -->
+                        <div class="text_editor_container">
+                            <div class="custom_item new d-none d-md-block d-lg-block">
+                                <label class="inter_font word-count">Words 0</label>&nbsp;&nbsp;
+                                <label class="inter_font char-count">Charecter 0</label>
+                            </div>
+                            <div id="editor-container"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+  
+{% include 'theme/inc/footer.html' %}

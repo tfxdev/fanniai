@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- google jaquery cdn -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!--========== Font Awesome ==========-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!--========== ckeditor ===========-->
+    <!-- <script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>  -->
+    <!-- <script src="statc/js/editor_conf/ckeditor.js"></script> -->
+
+    <!--========== Slider ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <!-- style -->
+    <link href="./statc/css/style.css" rel="stylesheet">
+
+    <!-- nav -->
+    <link href="./statc/css/nav.css" rel="stylesheet">
+
+    <!-- home -->
+    <link href="./statc/css/home.css" rel="stylesheet">
+
+    <!-- brand -->
+    <link href="./statc/css/brand.css" rel="stylesheet">
+
+    <!-- service -->
+    <link href="./statc/css/service.css" rel="stylesheet">
+
+    <!-- about -->
+    <link href="./statc/css/about.css" rel="stylesheet">
+
+    <!-- ai video section -->
+    <link href="./statc/css/ai_video_section.css" rel="stylesheet">
+
+    <!-- interview -->
+    <link href="./statc/css/interview.css" rel="stylesheet">
+
+    <!-- bollean -->
+    <link href="./statc/css/bollean_search.css" rel="stylesheet">
+
+    <!-- testimonial -->
+    <link href="./statc/css/testimoniqal.css" rel="stylesheet">
+
+    <!-- faq-->
+    <link href="./statc/css/faq.css" rel="stylesheet">
+
+    <!-- service page -->
+    <link href="./statc/css/service_page.css" rel="stylesheet">
+
+    <!-- footer -->
+    <link href="./statc/css/footer.css" rel="stylesheet">
+
+    <!-- login -->
+    <link href="./statc/css/login.css" rel="stylesheet">
+
+    <!-- profile setting -->
+    <link href="./statc/css/profile_setting.css" rel="stylesheet">
+
+    <!-- profile setting -->
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+    <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
+
+    <!-- create video -->
+    <link href="./statc/css/create_video.css" rel="stylesheet">
+
+    <title>Bollean search</title>
+</head>
+
+<body>
+ 
+    <!--Navbar=================-->
+    <nav class="navbar navbar-expand-md py-4 second_nav px-2"> 
+        
+        <div class="container">
+
+            <!-- logo -->
+            <a class="navbar-brand" href="index.html">
+                <img src="{% static 'img/logo.png' %}" class="logo" alt="logo">
+            </a>
+            <button class="d-block d-md-none d-lg-none menu_bar_btn" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+
+                <i class="fas fa-bars menu_bar"></i>
+                <i class="far fa-times nav_cross"></i>
+
+            </button>
+
+            <div class="collapse navbar-collapse ps-0 ps-md-0 " id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link active popin_font py-3 mt-1 mx-md-3 mx-lg-3" aria-current="page" href="profile_settings.html">
+                            <img src="{% static 'img/setting.png' %}" class="nav_setting_icon" alt="user icon">
+                        </a>
+                    </li>
+
+                    <li class="nav-item text-center">
+                        <a class="nav-link active popin_font py-3" aria-current="page" href="#">
+                            <img src="{% static 'img/Rectangle.png' %}" class="nav_user_img" alt="user icon">&nbsp; <img src="{% static 'img/short-down.png' %}" class="nav_short_down_img" alt="short down">
+                        </a>
+                    </li>
+
+                    
+                </ul>
+
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- interview section -->
+    <section class="px-2 create_video">
+        <div class="row">
+            <div class="col-5 col-md-4 col-lg-2 create_video_left_side py-4">
+
+                <!-- video -->
+                <div class="d-flex justify-content-center">
+                    <video id="" class="left_side_video">
+                        <source src="statc/video/create_video/create_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <!-- video heading-->
+                <p class="video_desc inter_font text-center py-2">Scene 1</p>
+
+                <!-- video upload -->
+                <div class="d-flex justify-content-center">
+                    <label class="d-block videoInput_alabel">
+                        <div class="video_add_img_container">
+                            <img src="{% static 'img/plus 1.png' %}" alt="video add icon">
+                        </div>
+                        
+                        <input type="file" class="video_input d-none">
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-7 col-md-8 col-lg-10 video_create_right_side">
+                <div class="video_container d-flex justify-content-center py-0 py-md-0 py-lg-5">
+                    <video id="myVideo" class="right_side_video">
+                        <source src="statc/video/create_video/create_video.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <div class="video_right_voice_play_container">
+                    <div class="d-block d-md-flex d-lg-flex">
+                        <!-- slect option -->
+                        <div class="my-2 interview_question_select col-12 col-md-6 col-lg-2 right_video_slect_container">
+                            <select class="inter_font" aria-label="Default select example">
+                                <option class="inter_font" selected>Select Voice</option>
+                                <option class="inter_font" value="1">Voice 1</option>
+                                <option class="inter_font" value="2">Voice 2</option>
+                            </select>
+                        </div>
+
+                        <div class="ms-auto my-2">
+                            <button class="play_btn inter_font" id="playPause"><i class="fas fa-play play_icon"></i> Play</button>
+                        </div>
+                    </div>
+                    <p class="right_create_video_desc inter_font mt-3">
+                        Type your script here or <span style="text-decoration: underline;">upload</span> an audio file
+                    </p>
+                </div>
+            </div>
+        </div>
+            
+        <script>
+            $(document).ready(function(){
+                var video = document.getElementById("myVideo");
+                $("#playPause").click(function(){
+                    if (video.paused) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                });
+            });
+        </script>
+        
+    </section>
+  
+{% include 'theme/inc/footer.html' %}
