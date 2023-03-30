@@ -37,12 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
 
     #! local app
     'ai',
     'core',
     'accounts',
 
+=======
+    'um'
+>>>>>>> 6c7594aacacf9d56e505ad8cb11ac014c8624027
 ]
 
 MIDDLEWARE = [
