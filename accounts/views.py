@@ -120,7 +120,7 @@ class RegistrationView(View):
 class LogoutView(LoginRequiredMixin,View):
     def get(self,request):
         logout(request)
-        return redirect('home:home') # Logout successful and redirect to home page
+        return redirect('core:home') # Logout successful and redirect to home page
 
 
 class ForgetPassword(TemplateView):

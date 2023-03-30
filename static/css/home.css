@@ -2,6 +2,13 @@
     width: 125px;
 }
 .home {
+    background-image: url("../img/home/Ellipse 1136.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background: #00016D;
+}
+.home {
     background-image: url("../img/home/Ellipse\ 1136.png");
     background-repeat: no-repeat;
     background-size: cover;

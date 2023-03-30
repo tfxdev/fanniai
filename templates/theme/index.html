@@ -16,7 +16,7 @@
                             <p class="home_desc inter_font py-3">
                                 Maximize your Recruiting impact with our customizable platform and personalize support, designed to help you succeed in your role.
                             </p>
-                            <a href="#!" class="home_btn py-3">Get Started <i class="fal fa-arrow-right"></i></a>
+                            <a href="{% url 'ai:generator_page' %}" class="home_btn py-3">Get Started <i class="fal fa-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-5 justify-content-center ">
@@ -66,7 +66,7 @@
             <div class="row p-0 p-md-0 p-lg-5">
 
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card d-block" href="candidate_summary.html">
+                    <a class="service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/pathtool.png' %}" class="d-block" alt="service icon">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card d-block" href="technical_question.html">
+                    <a class="service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/pen-tool-2.png' %}" class="d-block" alt="service icon">
@@ -100,7 +100,7 @@
 
 
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card d-block" href="candidate_summary.html">
+                    <a class="service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/message-programming.png' %}" class="d-block"
@@ -118,7 +118,7 @@
 
                 <!-- texhnical question -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="technical_question.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/Marketer.png' %}" class="d-block" alt="service icon">
@@ -134,7 +134,7 @@
 
                 <!-- bollean-->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="bollean_search.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/messagesearch.png' %}" class="d-block" alt="service icon">
@@ -150,7 +150,7 @@
 
                 <!-- job description -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="job_description.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/Group.png' %}" class="d-block" alt="service icon">
@@ -166,7 +166,7 @@
 
                 <!-- email templates -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="email_template.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/people.png' %}" class="d-block" alt="service icon">
@@ -182,7 +182,7 @@
 
                 <!-- Job Description Analysis Tool -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="breack_down.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/briefcase.png' %}" class="d-block" alt="service icon">
@@ -198,7 +198,7 @@
 
                 <!-- AI Resume screening & Reverse Searching -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="candidate_summary.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/Group.png' %}" class="d-block" alt="service icon">
@@ -214,7 +214,7 @@
 
                 <!-- ai avatar video generator -->
                 <div class="col-12 col-md-6 col-lg-4 my-2">
-                    <a class="service_card service_card d-block" href="create_video.html">
+                    <a class="service_card service_card d-block" href="{% url 'ai:generator_page' %}">
                         <div class="service_card_icon_container d-flex pb-3">
                             <div class="service_icon">
                                 <img src="{% static 'img/service-icon/Group.png' %}" class="d-block" alt="service icon">
@@ -306,7 +306,7 @@
                     
 
                    <div class="mt-5">
-                        <a href="#!" class="about_btn inter_font mt-3">Get Started</a>
+                        <a href="{% url 'ai:generator_page' %}" class="about_btn inter_font mt-3">Get Started</a>
                    </div> 
                 </div>
             </div>
@@ -351,7 +351,7 @@
                         <p class="interview_desc inter_font py-2">
                             Our advanced algorithms generate Candidate summaries, Technical Interview Questions, Job descriptions, email templates, and assist and editing resumes. 
                         </p>
-                        <a href="#! " class="btn inter_view_question_btn inter_font my-2 d-inline">Get Started <i
+                        <a href="{% url 'ai:generator_page' %}" class="btn inter_view_question_btn inter_font my-2 d-inline">Get Started <i
                                 class="fal fa-arrow-right"></i></a>
                     </div>
 
@@ -380,7 +380,7 @@
                         <p class="bollean_search_desc inter_font">
                             Our AI technology analyzes the resumes key skills, and experience to match the job description, allowing recruiters to quickly asses candidate suitability
                         </p>
-                        <a href="#!" class="bollean_btn btn">Get Started <i class="fal fa-arrow-right"></i></a>
+                        <a href="{% url 'ai:generator_page' %}" class="bollean_btn btn">Get Started <i class="fal fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -399,7 +399,7 @@
                         <p class="interview_desc inter_font py-2">
                             Our AI-powered Avatar video generator creates personalized video for sales, presentations, and marketing your brand
                         </p>
-                        <a href="create_video.html" class="btn inter_view_question_btn inter_font my-2 d-inline">Get Started <i
+                        <a href="{% url 'ai:generator_page' %}" class="btn inter_view_question_btn inter_font my-2 d-inline">Get Started <i
                                 class="fal fa-arrow-right"></i></a>
                     </div>
 

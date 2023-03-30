@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponseBadRequest, JsonResponse
+from django.contrib.auth.decorators import login_required
 
+from config.template_name import GENERATOR_TEMPLATE
+
+@login_required
 def generator_page(request):
-    return render(request, 'theme/generator.html')
+    return render(request, GENERATOR_TEMPLATE)
 
 
 def generator_handler(request):
