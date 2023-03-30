@@ -1,10 +1,14 @@
 from django.urls import path, include
 from django.views.generic import TemplateView
+
+from config.template_name import ABOUT_TEMPLATE
 from . import views
 
+app_name = 'core'
+
 urlpatterns = [
-    # path('', views.index),
-    path('about/', TemplateView.as_view(template_name="theme/about_page.html")),
+    path('', views.HomeView.as_view(), name='home'),
+    path('about/', TemplateView.as_view(template_name=ABOUT_TEMPLATE), name='about' ),
 
     # path('', views.index),
     # path('', views.index),

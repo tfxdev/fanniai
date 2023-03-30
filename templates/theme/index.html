@@ -1,27 +1,36 @@
-{% include 'theme/inc/header.html' %}
-            <!-- home section -->
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-7 d-flex d-md-flex d-lg-block justify-content-center">
-                    <div class="home_title_container text-center text-md-center text-lg-start">
-                        <h1 class="home_header inter_font">Streamline Your Recruitment Workflows with Our User-Friendly Platform</h1>
-                        <p class="home_desc inter_font py-3">
-                            Maximize your Recruiting impact with our customizable platform and personalize support, designed to help you succeed in your role.
-                        </p>
-                        <a href="#!" class="home_btn py-3">Get Started <i class="fal fa-arrow-right"></i></a>
+{% extends 'base.html' %}
+{% block title %} Home Page {% endblock title %}
+
+{% load static %}
+
+    {% block Navbar %}
+        <section class="home">
+            <div class="container">
+                <!--Navbar=================-->
+                {% include 'theme/inc/header.html' %}
+                <!-- home section -->
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-7 d-flex d-md-flex d-lg-block justify-content-center">
+                        <div class="home_title_container text-center text-md-center text-lg-start">
+                            <h1 class="home_header inter_font">Streamline Your Recruitment Workflows with Our User-Friendly Platform</h1>
+                            <p class="home_desc inter_font py-3">
+                                Maximize your Recruiting impact with our customizable platform and personalize support, designed to help you succeed in your role.
+                            </p>
+                            <a href="#!" class="home_btn py-3">Get Started <i class="fal fa-arrow-right"></i></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-12 col-lg-5 justify-content-center ">
-                    <div class="home_img_container d-flex">
-                        <img class="d-block m-auto m-md-auto ms-lg-auto home_img" src="statc/img/home/home-img.png' %}">
+                    <div class="col-12 col-md-12 col-lg-5 justify-content-center ">
+                        <div class="home_img_container d-flex">
+                            <img class="d-block m-auto m-md-auto ms-lg-auto home_img" 
+                            src="{% static 'img/home/home-img.png' %}">
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    {% endblock Navbar %}
 
-        </div>
-
-
-    </section>
-
+    {% block mainContent %}
     <!-- brands section ================================-->
     <section class="border">
         <div class="container">
@@ -441,7 +450,7 @@
                                 </p>
                                 <div class="author_container d-flex justify-content-center">
                                     <img class="testimonial_author_img d-block" style="width:55px; height: 55px;"
-                                        alt="testimonial_author" src="statc/img/testimonial/testimonial_author1.png' %}">
+                                        alt="testimonial_author" src="{% static 'img/testimonial/testimonial_author1.png' %}">
                                 </div>
                                 <h4 class="testimonial_author_name text-center inter_font pt-3">Josh Noraan</h4>
                                 <p class="testimonial_author_title inter_font">Project Manager</p>
@@ -468,7 +477,7 @@
                             </p>
                             <div class="author_container d-flex justify-content-center">
                                 <img class="testimonial_author_img d-block" style="width:55px; height: 55px;"
-                                    alt="testimonial_author" src="statc/img/testimonial/testimonial_author1.png' %}">
+                                    alt="testimonial_author" src="{% static 'img/testimonial/testimonial_author1.png' %}">
                             </div>
                             <h4 class="testimonial_author_name text-center inter_font pt-3">Josh Noraan</h4>
                             <p class="testimonial_author_title inter_font">Project Manager</p>
@@ -649,12 +658,8 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
 
-
-
     </section>
-{% include 'theme/inc/footer.html' %}
+    {% endblock mainContent %}
+

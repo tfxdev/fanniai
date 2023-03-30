@@ -88,7 +88,7 @@
                         <div class="my-4 interview_question_select">
                             <select class="inter_font" aria-label="Default select example" id="generator_type" name="_type">
                                 <option class="inter_font">Select</option>
-                                <option class="inter_font" value="1">Interview Question</option>
+                                <option class="inter_font" selected value="1">Interview Question</option>
                                 <option class="inter_font" value="2">Boolean Search</option>
                                 <option class="inter_font" value="3">Candidate Summaries</option>
                                 <option class="inter_font" value="4">Jobs Description</option>
@@ -98,17 +98,13 @@
                                 <option class="inter_font" value="8">Technical Question</option>
                             </select>
                         </div>
-                        
-    
-                        <!-- <h5 class="service_job_title inter_font my-3">Job Title</h5>
-                        <input class="job_title_input form-control inter_font my-3" placeholder="Enter jobs title" type="text"> -->
-    
+
                         <h5 class="job_description_header inter_font my-3">Describe Your Question</h5>
                         <textarea class="job_desc_input form-control my-3 inter_font" placeholder="Python Skill Test" id="input_box"></textarea>
                         <p id="warning_text"></p>
     
                         <div class="service_button_container d-block d-md-flex d-lg-flex mx-2 mt-5">
-                            <a href="#!" class="service_btn d-inline d-md-block d-lg-block inter_font">Clear</a>
+                            <input type="reset" class="service_btn d-inline d-md-block d-lg-block inter_font"  value="Clear">
                             <button id="submit_btn" class=" service_btn_active d-inline d-md-block d-lg-block ms-auto inter_font">Create</button>
                         </div>
                     </form>
@@ -121,7 +117,7 @@
                         <div class="d-flex service_input_desc_header_container px-4 py-3">
                             <h5 class="service_input_desc_header inter_font">
                                 <a href="#!" class=""><img src="{% static 'img/arrow-small-right 1.png' %}" class="service_input_desc_header_icon" alt="arrow icon"></a>
-                                &nbsp; Technical Question
+                                &nbsp; <span id="service_input_desc">Interview Question</span>
                             </h5>
 
                             
@@ -208,6 +204,17 @@
                 document.getElementById('warning_text').innerHTML = ''
                 input_box_text = document.getElementById('input_box').value
                 generator_type = document.getElementById('generator_type').value
+
+                service_input_desc = document.getElementById('service_input_desc')
+                
+                const all_type = ['Interview Question','Boolean Search','Candidate Summaries','Jobs Description','Email Template','Keyword Search','Jobs Description Breakdown','Technical Question'];
+
+                for(var i = 1; i <= all_type.length; i++){
+                    if(i == generator_type){
+                        service_input_desc.innerHTML = all_type[i-1]
+                    }
+                }
+
                 var requestOptions = {
                     method: 'GET',
                     redirect: 'follow'

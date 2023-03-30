@@ -1,104 +1,99 @@
+{% extends 'base.html' %}
+{% block title %} About Page {% endblock title %}
 {% load static %}
-{% include 'theme/inc/header.html' %}
 
-    <!-- ai work video section ================================-->
-    <section class="ai_work pb-5" id="about">
-        <div class="container">
-            <div class="title_desc_container pt-5">
-                <h1 class="section_title text-center manrope_font">How the Pure Talent AI Work</h1>
-                <div class="section_desc_container justify-content-center d-flex">
-                    <p class="section_desc text-center inter_font py-2">
-                        
-                        At Pure Talent AI, we understand the challenges that recruiting professionals face when it comes to finding the right match. The process can be time-consuming, expensive, and frustrating, especially when it's hard to find the right candidates with the right skills and experience. That's why we developed our state-of-the-art AI-powered recruitment software to help you overcome these challenges and succeed in today's competitive market.
-                        <br><br>
-                        Our software leverages the power of artificial intelligence to simplify the recruitment process, enabling you to focus on what really matters - finding the right people for your opening. Whether you need help with job descriptions, resume screening, or technical interviews, Pure Talent AI has the tools and expertise you need to succeed.                    
-                    </p>
+{% block Navbar %}
+<section class="home">
+    <div class="container">
+        <!--Navbar=================-->
+        {% include 'theme/inc/header.html' %}
+    </div>
+</section>
+{% endblock Navbar %}
 
-                </div>
-            </div>
-
-            <!-- video section -->
-            <div class="ai_video_container">
-
-                <div class="video_play_button_container d-none d-md-none d-lg-block">
-                    <button class="click btn"><img src="{% static 'video/ai_video_section/video-circle.png' %}"
-                            alt="video play icon"> </button>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <video id="myVideo" class="video">
-                        <source src="statc/video/ai_video_section/demo-video.mp4" type="video/mp4">
-                    </video>
-                </div>
+{% block mainContent %}
+<!-- ai work video section ================================-->
+<section class="ai_work pb-5" id="about">
+    <div class="container">
+        <div class="title_desc_container pt-5">
+            <h1 class="section_title text-center manrope_font">How the Pure Talent AI Work</h1>
+            <div class="section_desc_container justify-content-center d-flex">
+                <p class="section_desc text-center inter_font py-2">
+                    
+                    At Pure Talent AI, we understand the challenges that recruiting professionals face when it comes to finding the right match. The process can be time-consuming, expensive, and frustrating, especially when it's hard to find the right candidates with the right skills and experience. That's why we developed our state-of-the-art AI-powered recruitment software to help you overcome these challenges and succeed in today's competitive market.
+                    <br><br>
+                    Our software leverages the power of artificial intelligence to simplify the recruitment process, enabling you to focus on what really matters - finding the right people for your opening. Whether you need help with job descriptions, resume screening, or technical interviews, Pure Talent AI has the tools and expertise you need to succeed.                    
+                </p>
 
             </div>
         </div>
-    </section>
 
+        <!-- video section -->
+        <div class="ai_video_container">
 
+            <div class="video_play_button_container d-none d-md-none d-lg-block">
+                <button class="click btn"><img src="{% static 'video/ai_video_section/video-circle.png' %}"
+                        alt="video play icon"> </button>
+            </div>
+            <div class="d-flex justify-content-center">
+                <video id="myVideo" class="video">
+                    <source src="{% static 'video/ai_video_section/demo-video.mp4' %}" type="video/mp4">
+                </video>
+            </div>
 
+        </div>
+    </div>
+</section>
 
+<!-- contact form -->
+<section class="contact" style="overflow: hidden;">
 
-    <!-- contact form -->
-    <section class="contact" style="overflow: hidden;">
+    <div class="container p-3">
 
-        <div class="container p-3">
+        <div class="contact_second_section">
 
-            <div class="contact_second_section">
-
-                <div class="row inter_font">
-                    <div class="col-md-5 py-5" >
-                        <h1 class="get_in_touch_header text-center" style="color: #230475;">Get in Touch</h1>
-                        <p class="text-center">info@puretalent.ai</p>
-                        <div class="d-flex justify-content-center">
-                            <a href=""  class="d-block mx-2 contact_page_icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""  class="d-block mx-2 contact_page_icon"><i class="fab fa-twitter"></i></a>
-                        </div>
+            <div class="row inter_font">
+                <div class="col-md-5 py-5" >
+                    <h1 class="get_in_touch_header text-center" style="color: #230475;">Get in Touch</h1>
+                    <p class="text-center">info@puretalent.ai</p>
+                    <div class="d-flex justify-content-center">
+                        <a href=""  class="d-block mx-2 contact_page_icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href=""  class="d-block mx-2 contact_page_icon"><i class="fab fa-twitter"></i></a>
                     </div>
-                    
-                    <form class="col-md-7 px-5 py-5 inter_font">
-    
-                        <div class="px-md-5">
-                            <div class="d-flex">
-                                <div class="mb-3 col-6 pe-2">
-                                    <label for="exampleFormControlInput1" class="form-label contact_form_label_color">First Name</label>
-                                    <input type="email" class="form-control contact_form_input" id="exampleFormControlInput1" >
-                                </div>
-                                <div class="mb-3 col-6 ps-2">
-                                    <label for="exampleFormControlInput1" class="form-label contact_form_label_color">Last Name</label>
-                                    <input type="email" class="form-control contact_form_input" id="exampleFormControlInput1" >
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label contact_form_label_color">Email<sup>*</sup></label>
+                </div>
+                
+                <form class="col-md-7 px-5 py-5 inter_font">
+
+                    <div class="px-md-5">
+                        <div class="d-flex">
+                            <div class="mb-3 col-6 pe-2">
+                                <label for="exampleFormControlInput1" class="form-label contact_form_label_color">First Name</label>
                                 <input type="email" class="form-control contact_form_input" id="exampleFormControlInput1" >
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label contact_form_label_color ">Message</label>
-                                <textarea class="form-control contact_form_input" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="mb-3 col-6 ps-2">
+                                <label for="exampleFormControlInput1" class="form-label contact_form_label_color">Last Name</label>
+                                <input type="email" class="form-control contact_form_input" id="exampleFormControlInput1" >
                             </div>
-        
-                            <div class="mb-3">
-                                <button class="btn col-12 contact_submit_btn" >Send</button>
-                            </div>
-                            <p class="thanks_for_submitting inter_font">Thanks for submitting</p>
                         </div>
-                        
-                    </form>
-                </div>
-
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label contact_form_label_color">Email<sup>*</sup></label>
+                            <input type="email" class="form-control contact_form_input" id="exampleFormControlInput1" >
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label contact_form_label_color ">Message</label>
+                            <textarea class="form-control contact_form_input" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+    
+                        <div class="mb-3">
+                            <button class="btn col-12 contact_submit_btn" >Send</button>
+                        </div>
+                        <p class="thanks_for_submitting inter_font">Thanks for submitting</p>
+                    </div>
+                    
+                </form>
             </div>
-
-            
-            
         </div>
-        
-        
-    </section>
+    </div>
+</section>
 
-
-
-
-
-
-
-    {% include 'theme/inc/footer.html' %}
+{% endblock mainContent %}
