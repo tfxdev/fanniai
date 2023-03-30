@@ -9,8 +9,6 @@ class Candidate(models.Model):
     def __str__(self):
         return self.user.username
     
-    
-    
 class Work_experience(models.Model):
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     company = models.CharField(max_length=220, null=True, blank=True)
@@ -31,7 +29,7 @@ class Education(models.Model):
     graduation_date = models.DateField()
     
     def __str__(self):
-        return self.candidate
+        return self.candidate.user.username
 
 class Package(models.Model):
     name = models.CharField(max_length=300, blank=False, null=True)
@@ -47,12 +45,12 @@ class Package_type(models.Model):
     stripe_price_id = models.CharField(max_length=40)
     
     def __str__(self):
-        return self.package
+        return self.package.name
     
 class Package_feature(models.Model):
     package = models.ForeignKey(Package_type, on_delete=models.CASCADE)
     feature = models.TextField()
 
     def __str__(self):
-        return self.package
+        return self.package.name
     

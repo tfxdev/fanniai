@@ -8,7 +8,7 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('about/', TemplateView.as_view(template_name=ABOUT_TEMPLATE), name='about' ),
+    path('about/', views.AboutView.as_view(), name='about' ),
 
     # path('', views.index),
     # path('', views.index),

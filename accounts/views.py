@@ -22,7 +22,7 @@ class LoginView(View):
         #? If user is already login then redirect to home page
         # If user is already login
         if request.user.is_authenticated:
-            return redirect('home:home')
+            return redirect('core:home')
         
         #? Set cache next url. If any authenticated required hit unauthorized user
         if request.method == 'GET':

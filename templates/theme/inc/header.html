@@ -47,12 +47,20 @@
 
             </ul>
 
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item text-center">
-                    <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page" href="{% url 'accounts:login' %}">LOGIN &nbsp;<img src="{% static 'img/user.png' %}" alt="user icon"> </a>
-                </li>
-
-            </ul>
+            {% if user.is_authenticated %}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item text-center">
+                        <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page" href="{% url 'accounts:logout' %}">LOGOUT  </a>
+                    </li>
+                </ul> 
+            {% else %}
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item text-center">
+                        <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page" href="{% url 'accounts:login' %}">LOGIN &nbsp;<img src="{% static 'img/user.png' %}" alt="user icon"> </a>
+                    </li>
+                </ul>   
+            {% endif %}
+                
 
         </div>
 
