@@ -18,10 +18,12 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
+    <!--========== ckeditor ===========-->
+    <!-- <script src="https://cdn.ckeditor.com/4.16.2/standard-all/ckeditor.js"></script>  -->
+    <!-- <script src="statc/js/editor_conf/ckeditor.js"></script> -->
+
     <!--========== Slider ==========-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-
-
     <!-- style -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
@@ -64,19 +66,19 @@
     <!-- login -->
     <link href="{% static 'css/login.css' %}" rel="stylesheet">
 
-   <!-- profile setting -->
-   <link href="{% static 'css/profile_setting.css' %}" rel="stylesheet">
+    <!-- profile setting -->
+    <link href="{% static 'css/profile_setting.css' %}" rel="stylesheet">
 
-   <!-- create video -->
-   <link href="{% static 'css/create_video.css' %}" rel="stylesheet">
+    <!-- create video -->
+    <link href="{% static 'css/create_video.css' %}" rel="stylesheet">
 
-   <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css' %}" rel="stylesheet">
+    <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script>
 
-    
 
-    <title>Pure Talent AI</title>
+    <title>TEchnical Question</title>
 </head>
+
 
 <body>
     <!-- home section ================================-->
@@ -107,7 +109,8 @@
                                 <a class="nav-link active popin_font" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item mx-3 text-center">
-                                <a class="nav-link active popin_font" aria-current="page" href="#solutions">Solutions</a>
+                                <a class="nav-link active popin_font" aria-current="page"
+                                    href="#solutions">Solutions</a>
                             </li>
 
                             <!-- <li class="nav-item mx-3 text-center dropdown_container">
@@ -125,13 +128,13 @@
                             </li> -->
 
                             <script>
-                                $(".doropdown_button").click(function(){
+                                $(".doropdown_button").click(function () {
                                     $(".dropdown_content").toggle("slow");
                                 })
                             </script>
 
 
-                       
+
 
                             <li class="nav-item mx-3 m-auto text-center">
                                 <a class="nav-link popin_font" href="#!">Pricing</a>
@@ -148,7 +151,8 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item text-center">
                                 <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page"
-                                    href="login.html">LOGIN &nbsp;<img src="{% static 'img/user.png' %}" alt="user icon"> </a>
+                                    href="login.html">LOGIN &nbsp;<img src="{% static 'img/user.png' %}"
+                                        alt="user icon"> </a>
                             </li>
 
                         </ul>

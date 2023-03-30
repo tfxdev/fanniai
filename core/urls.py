@@ -5,7 +5,6 @@ from . import views
 urlpatterns = [
     # path('', views.index),
     path('about/', TemplateView.as_view(template_name="theme/about_page.html")),
-    path('about/', ),
 
     # path('', views.index),
     # path('', views.index),
