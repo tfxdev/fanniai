@@ -1,0 +1,272 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Profile Page {% endblock title %}
+
+    {% block Navbar %}
+        <section class="home">
+            <div class="container">
+                <!--Navbar=================-->
+                {% include 'theme/inc/header.html' %}
+                <!-- home section -->
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-7 d-flex d-md-flex d-lg-block justify-content-center">
+                        <div class="home_title_container text-center text-md-center text-lg-start">
+                            <h1 class="home_header inter_font">Streamline Your Recruitment Workflows with Our User-Friendly Platform</h1>
+                            <p class="home_desc inter_font py-3">
+                                Maximize your Recruiting impact with our customizable platform and personalize support, designed to help you succeed in your role.
+                            </p>
+                            <a href="{% url 'ai:generator_page' %}" class="home_btn py-3">Get Started <i class="fal fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-5 justify-content-center ">
+                        <div class="home_img_container d-flex">
+                            <img class="d-block m-auto m-md-auto ms-lg-auto home_img" 
+                            src="{% static 'img/home/home-img.png' %}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock Navbar %}
+
+
+    {% block mainContent %}
+    
+    <!-- update password modal-->
+    <div class="modal fade" id="passwordUpdateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Change your password</h5>
+                    <form action="" method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                        
+                        <!-- password -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">Current Password<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="Enter Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not vaild
+                            </div>
+                        </div>
+
+                        <!-- new password -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">New Password<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="Enter Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not vaild
+                            </div>
+                        </div>
+
+                        <!-- confirm password -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">Confirm New Password<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="Enter Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not vaild
+                            </div>
+                        </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn d-block update_cancel_btn mx-1 inter_font" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn d-block update_cancel_btn mx-1 inter_font update_cancel_btn_active" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#successMessageModal">Update</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- update email modal-->
+    <div class="modal fade" id="emailUpdateModal" tabindex="-1" aria-labelledby="emailUpdateModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Change your Email</h5>
+                    <form action="" method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                        
+                        <!-- email -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">Verify existing email<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="jr0131511@gmail.com" type="email" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> email is not vaild
+                            </div>
+                        </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn d-block update_cancel_btn mx-1 inter_font" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn d-block update_cancel_btn mx-1 inter_font update_cancel_btn_active" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#verificationModal">Send verification code</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- successfull message modal-->
+    <div class="modal fade" id="successMessageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Password change successfully</h5>
+                    <div class="d-flex justify-content-center"><img src="{% static 'img/profile-settings/tick-circle.png' %}" class="d-block" alt="success mark"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- verification modal -->
+    <div class="modal fade" id="verificationModal" tabindex="-1" aria-labelledby="verificationModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Enter your code</h5>
+                    <form action="" method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                        
+                        <!-- verification code -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">Verification code<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="4353453" type="text" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> code is not vaild
+                            </div>
+                        </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn d-block update_cancel_btn mx-1 inter_font" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn d-block update_cancel_btn mx-1 inter_font update_cancel_btn_active" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#newEmailVerificationModal">Confirm</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- email successfull message modal-->
+    <div class="modal fade" id="EmailsuccessMessageModal" tabindex="-1" aria-labelledby="EmailsuccessMessageModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Email change successfully</h5>
+                    <div class="d-flex justify-content-center"><img src="{% static 'img/profile-settings/tick-circle.png' %}" class="d-block" alt="success mark"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- new email modal -->
+    <div class="modal fade" id="newEmailVerificationModal" tabindex="-1" aria-labelledby="vewEmailModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content py-5">
+                <div class="">
+                    <h5 class="change_info_form_header manrope_font text-center">Enter new email</h5>
+                    <form action="" method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                        
+                        <!-- new email -->
+                        <div class="mb-3 auth_input_container">
+                            <label class="mb-2 auth_input_label inter_font" for="email">Enter new email<sup style="color:red;">*</sup></label>
+                            <input id="email" placeholder="enter email" type="text" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <div class="invalid-feedback">
+                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> email is not vaild
+                            </div>
+                        </div>
+    
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn d-block update_cancel_btn mx-1 inter_font" data-bs-dismiss="modal">Cancel</button>
+                            <button class="btn d-block update_cancel_btn mx-1 inter_font update_cancel_btn_active" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#EmailsuccessMessageModal">Confirm</button>
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+ 
+
+    <!-- profile page setting -->
+    <section class="px-2 service_page py-5">
+        <div class="container">
+            <div class="row">
+                
+                <div action="#!" class="col-lg-3 col-md-4 col-12">
+                    <div>
+                        <h5 class="prfile_setting_heading prfile_setting_heading_active inter_font my-3 manrope_font ps-2"><a href="#!" alt=""><img src="{% static 'img/profile-settings/setting-2.png' %}" alt="profile setting icon" class="profile_setting_icon">&nbsp; Setting</a></h5>
+                        <h5 class="prfile_setting_heading inter_font my-3 manrope_font ps-2"><a href="#!" alt=""><img src="{% static 'img/profile-settings/setting-2.png' %}" alt="profile setting icon" class="profile_setting_icon">&nbsp; Profile</a></h5>
+                    </div>
+                    
+                </div>
+    
+                <div class="col-lg-9 col-md-8 col-12 ps-4 py-5 py-md-0 py-lg-0">
+
+                    <form action="#!" class="">
+                        <div class="service_main_container p-4">
+                            <h5 class="profle_info_form_heading manrope_font">Basic Details</h5>
+
+                            <div class="profile_setting_item_container py-2">
+                                <label class="profile_input_label inter_font d-block">Email</label>
+                                <input class="profile_setting_input col-12 col-md-6 col-lg-5 mt-2" type="email" placeholder="jr0131511@gmail.com">
+                            </div>
+
+                            <div class="profile_setting_item_container py-2">
+                                <label class="profile_input_label inter_font d-block">Name</label>
+                                <input class="profile_setting_input col-12 col-md-6 col-lg-5 mt-2" type="text" placeholder="jr0131511@gmail.com">
+                            </div>
+
+                            <div class="d-flex change_password_mail_container my-3">
+                                <a href="#!" class="d-block inter_font mx-1" data-bs-toggle="modal" data-bs-target="#passwordUpdateModal">Change Password</a>
+                                <a href="#!" class="d-block inter_font mx-1" data-bs-toggle="modal" data-bs-target="#emailUpdateModal">Change Email</a>
+                            </div>
+
+                            <!-- Apps preferences -->
+                            <div class="profile_setting_item_container py-2">
+                                <label class="profile_input_label inter_font d-block">Theme</label>
+                                <div class="mt-2 interview_question_select col-12 col-md-6 col-lg-5 profile_setting_select">
+                                    <select class="inter_font borde" aria-label="Default select example">
+                                        <option class="inter_font">Select</option>
+                                        <option class="inter_font" selected value="1">Default</option>
+                                        <option class="inter_font" value="2">Dark</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <!-- theme -->
+                            <div class="profile_setting_item_container py-2">
+                                <label class="profile_input_label inter_font d-block">Theme</label>
+                                <div class="mt-2 interview_question_select col-12 col-md-6 col-lg-5 profile_setting_select">
+                                    <select class="inter_font borde" aria-label="Default select example">
+                                        <option class="inter_font">Select</option>
+                                        <option class="inter_font" selected value="1">Light</option>
+                                        <option class="inter_font" value="2">Dark</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex">
+                                <button class="d-block ms-auto profile_setting_next_btn inter_font">Next <img src="{% static 'img/login/next_arrow.png' %}" alt="next page arrow icon"></button>
+                            </div>
+
+                        </div>
+
+                        
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </section>
+  
+
+    {% endblock mainContent %}

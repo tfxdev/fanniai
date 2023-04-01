@@ -42,32 +42,21 @@
     <div class="login_page">
         <div class="row">
             <div class="col-lg-7 login_left_side">
-
+                {% if form.errors %}
+                    <p> {{ form.errors }} </p>
+                {% endif %}
+        
                 <div class="auth_form_container">
                     <form  method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
                         {% csrf_token %}
                         
-                        {{ form.as_p }}
-                            {% if redirect_field_value %}
-                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                        
                         <h5 class="login_heading inter_font">Registration</h5>
                         <p class="login_desc inter_font mt-3">Please Fill information and create account</p>
 
-                        <!-- full name -->
-                        <div class="mb-1 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="fullname">Full name<sup style="color:red;">*</sup></label>
-                            <input id="fullname" placeholder="Name" type="text" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="name" value="" required>
-                            <div class="invalid-feedback">
-                                <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> name is not vaild
-                            </div>
-                        </div>
-    
                         <!-- email -->
                         <div class="mb-1 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="email">Email Address<sup style="color:red;">*</sup></label>
-                            <input id="email" placeholder="Email" type="email" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="email" value="" required>
+                            <label class="mb-2 auth_input_label inter_font" for="id_email">Email Address<sup style="color:red;">*</sup></label>
+                            <input id="id_email" placeholder="Email" type="email" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="email" value="" required>
                             <div class="invalid-feedback">
                                 <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> email is not vaild
                             </div>
@@ -75,8 +64,8 @@
     
                         <!-- password -->
                         <div class="mb-1 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="password">Password<sup style="color:red;">*</sup></label>
-                            <input id="password" placeholder="Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <label class="mb-2 auth_input_label inter_font" for="id_password1">Password<sup style="color:red;">*</sup></label>
+                            <input placeholder="Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="password1" id="id_password1" value="" required>
                             <div class="invalid-feedback">
                                 <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not vaild
                             </div>
@@ -84,8 +73,8 @@
 
                         <!-- Confirm password -->
                         <div class="mb-1 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="password">Confirm Password<sup style="color:red;">*</sup></label>
-                            <input id="password" placeholder="Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <label class="mb-2 auth_input_label inter_font" for="id_password2">Confirm Password<sup style="color:red;">*</sup></label>
+                            <input id="id_password2" placeholder="Confirm Password" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="password2" value="" required>
                             <div class="invalid-feedback">
                                 <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not match
                             </div>
@@ -110,7 +99,7 @@
     
                         <div class="pt-2">
                             <label class="create_account_label">Already have account?</label>
-                            <a href="{% url 'accounts:login' %}" class="registration_link">Login</a>
+                            <a href="{% url 'account_login' %}" class="registration_link">Login</a>
                         </div>
                         
     
