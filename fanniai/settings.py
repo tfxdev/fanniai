@@ -41,9 +41,32 @@ INSTALLED_APPS = [
     #! local app
     'ai',
     'core',
-    'accounts',
-    'um'
+    # 'accounts',
+    'um',
+
+    #! third party apps
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    "crispy_forms",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+SITE_ID = 1
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    "django.contrib.auth.backends.ModelBackend",
+    # allauth` specific authentication methods, such as login by e-mail
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+# verification email will be sent to console
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_UNIQUE_EMAIL = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
 
@@ -44,23 +45,23 @@
             <div class="col-lg-7 login_left_side">
 
                 <div class="auth_form_container">
-                    <form action="" method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                    <form  method="POST" class="needs-validation auth_form p-4" style="font-size: 13px;" novalidate="" autocomplete="off">
+                        {% csrf_token %}
                         <h5 class="login_heading inter_font">Login</h5>
                         <p class="login_desc inter_font mt-3">Enter your email and password to sign in to your account.</p>
-    
                         <!-- email -->
                         <div class="mb-3 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="email">Email Address<sup style="color:red;">*</sup></label>
-                            <input id="email" placeholder="Enter email" type="email" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="emai" value="" required>
+                            <label class="mb-2 auth_input_label inter_font" for="id_login">Email Address<sup style="color:red;">*</sup></label>
+                            <input id="id_login" placeholder="Enter email" type="email" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="login" value="" required>
                             <div class="invalid-feedback">
                                 <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> email is not vaild
                             </div>
                         </div>
-    
+
                         <!-- password -->
                         <div class="mb-3 auth_input_container">
-                            <label class="mb-2 auth_input_label inter_font" for="email">Password<sup style="color:red;">*</sup></label>
-                            <input id="email" placeholder="Enter email" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="username" value="" required>
+                            <label class="mb-2 auth_input_label inter_font" for="id_password">Password<sup style="color:red;">*</sup></label>
+                            <input id="id_password" placeholder="Enter email" type="password" style="font-size: 13px; text-transform: lowercase;"class="form-control auth_input px-3 py-2 inter_font" name="password" value="" required>
                             <div class="invalid-feedback">
                                 <img src="{% static 'img/info-circle.png' %}" alt="danger icon"> password is not vaild
                             </div>
@@ -68,10 +69,10 @@
                         <!-- remember me -->
                         <div class="d-flex align-items-center py-1">
                             <div class="form-check check_container">
-                                <input type="checkbox" name="remember" id="remember" class="form-check-input">
-                                <label for="remember" class="form-check-label remember_me_label inter_font">Remember Me</label>
+                                <input type="checkbox" name="remember" id="id_remember" class="form-check-input">
+                                <label for="id_remember" class="form-check-label remember_me_label inter_font">Remember Me</label>
                             </div >
-                            <div class="forgot_password ms-auto inter_font"><a href="{% url 'accounts:forget' %}" >Forgot Password</a> </div>
+                            <div class="forgot_password ms-auto inter_font"><a href="" >Forgot Password</a> </div>
                         </div>
     
                         <button class="auth_btn btn col-12">Login</button>
@@ -93,10 +94,9 @@
     
                         <div class="pt-2">
                             <label class="create_account_label">Want to create an account?</label>
-                            <a href="{% url 'accounts:registration' %}" class="registration_link">Registration </a>
+                            <a href="{% url 'account_signup' %}" class="registration_link">Registration </a>
                         </div>
                         
-    
                     </form>
                 </div>
 
