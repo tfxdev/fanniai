@@ -1,15 +1,19 @@
 from django.db import models
 from django.contrib.auth.models import User
+from um import managers
+
 
 class Candidate(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20, null=True, blank=True)
     location = models.TextField()
+    objects = managers.CandidateManager()
 
     def __str__(self):
         return self.user.username
-    
-class Work_experience(models.Model):
+
+
+class WorkExperience(models.Model):
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
     company = models.CharField(max_length=220, null=True, blank=True)
     job_title = models.TextField()
@@ -18,8 +22,11 @@ class Work_experience(models.Model):
     job_description = models.TextField()
     job_title = models.TextField()
 
+    objects = managers.WorkExperienceManager()
+
     def __str__(self):
         return self.candidate.user.username
+
 
 class Education(models.Model):
     candidate = models.ForeignKey(Candidate, on_delete=models.CASCADE)
@@ -27,30 +34,27 @@ class Education(models.Model):
     degree = models.TextField()
     field_of_study = models.TextField()
     graduation_date = models.DateField()
-    
+
+    objects = managers.EducationManager()
+
     def __str__(self):
         return self.candidate.user.username
 
+
 class Package(models.Model):
     name = models.CharField(max_length=300, blank=False, null=True)
-    
-    def __str__(self):
-        return self.name
-    
-
-class Package_type(models.Model):
-    package = models.ForeignKey(Package, on_delete=models.CASCADE)
-    name = models.CharField(max_length=30, blank=False)
-    price = models.CharField(max_length=200)
-    stripe_price_id = models.CharField(max_length=40)
-    
-    def __str__(self):
-        return self.package.name
-    
-class Package_feature(models.Model):
-    package = models.ForeignKey(Package_type, on_delete=models.CASCADE)
+    sub_title = models.CharField(max_length=30, blank=False)
+    price = models.IntegerField()
     feature = models.TextField()
+    stripe_price_id = models.CharField(max_length=40)
 
     def __str__(self):
         return self.package.name
-    
+
+
+class PackageFeature(models.Model):
+    package = models.ForeignKey(Package, on_delete=models.CASCADE)
+    feature = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.package.name

@@ -1,0 +1,74 @@
+{% load static %}
+<section class="home">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg py-4">
+            <div class="container-fluid">
+
+                <!-- logo -->
+                <a class="navbar-brand" href="/">
+                    <img src="{% static 'img/logo.png' %}" class="logo" alt="logo">
+                </a>
+
+
+                <button class="d-block d-md-block d-lg-none menu_bar_btn" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+
+                    <i class="fas fa-bars menu_bar"></i>
+                    <i class="far fa-times nav_cross"></i>
+
+                </button>
+                <div class="collapse navbar-collapse ps-0 ps-md-0 " id="navbarSupportedContent">
+
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0 ps-0 ps-md-0 ps-lg-5">
+                        <li class="nav-item mx-3 text-center">
+                            <a class="nav-link active popin_font" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item mx-3 text-center">
+                            <a class="nav-link active popin_font" aria-current="page"
+                                href="#solutions">Solutions</a>
+                        </li>
+
+                        <script>
+                            $(".doropdown_button").click(function () {
+                                $(".dropdown_content").toggle("slow");
+                            })
+                        </script>
+
+
+                        <li class="nav-item mx-3 m-auto text-center">
+                            <a class="nav-link popin_font" href="{% url 'pages:pricing' %}">Pricing</a>
+                        </li>
+                        <li class="nav-item mx-3 m-auto text-center">
+                            <a class="nav-link popin_font" href="{% url 'pages:about' %}">About</a>
+                        </li>
+                        <li class="nav-item mx-3 m-auto text-center">
+                            <a class="nav-link popin_font" href="{% url 'um:search_view' %}">Search</a>
+                        </li>
+                        <li class="nav-item mx-3 m-auto text-center">
+                            <a class="nav-link popin_font" href="#">Contact</a>
+                        </li>
+
+                    </ul>
+
+                    {% if user.is_authenticated %}
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item text-center">
+                                <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page" href="{% url 'account_logout' %}">LOGOUT  </a>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item text-center">
+                                <a class="nav-link active popin_font login_button px-4 py-3" aria-current="page" href="{% url 'account_login' %}">LOGIN &nbsp;<img src="{% static 'img/user.png' %}" alt="user icon"> </a>
+                            </li>
+                        </ul>
+                    {% endif %}
+
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+</section>
